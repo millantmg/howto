@@ -3,6 +3,11 @@
   <head>
     <title>title</title>
     <style>
+      .panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.3s;
+      }
     </style>
   </head>
   <body>
@@ -16,28 +21,24 @@
     <div class="panel">
       <p>This is a para 2</p>
     </div>    
-    <button classs="accordion">section 3</button>
+    <button class="accordion">section 3</button>
     <div class="panel">
       <p>This is a para 3</p>
     </div>
 
       <script>  
       const x = document.getElementsByClassName("accordion");
-
       for (let i = 0; i < x.length; i++) {
         x[i].addEventListener("click", function() {
           this.classList.toggle("active");
-          var panel = this.nextElementSibling;
-          if (panel.style.display === "block") {
-            panel.style.display = "none";
+          const p = this.nextElementSibling;
+          if (p.style.maxHeight) {
+            p.style.maxHeight = null;
           } else {
-            panel.style.display = "block";
+            p.style.maxHeight = p.scrollHeight + "px";
           }
         });
       }
       </script>
-
-
-
   </body>
 </html>
