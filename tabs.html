@@ -7,40 +7,39 @@
   </head>
   <body>
 
-    <button class="tablinks" onclick="myfunc(event, 'london')">London</button>
-    <button class="tablinks" onclick="myfunc(event, 'paris')">Paris</button>
-    <button class="tablinks" onclick="myfunc(event, 'tokyo')">Tokyo</button>
+    <button class="btn" onclick="myfunc(event, 'london')">London</button>
+    <button class="btn" onclick="myfunc(event, 'paris')">Paris</button>
+    <button class="btn" onclick="myfunc(event, 'tokyo')">Tokyo</button>
 
-    <div id="london" class="tabcontent">
+    <div id="london" class="div">
       <h3>london</h3>
       <p>this is london</p>
     </div>
 
-    <div id="paris" class="tabcontent">
+    <div id="paris" class="div">
       <h3>paris</h3>
       <p>this is paris</p>
     </div>
 
-    <div id="tokyo" class="tabcontent">
+    <div id="tokyo" class="div">
       <h3>tokyo</h3>
       <p>this is tokyo</p>
     </div>
 
     <script>
-      function myfunc(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
+      function myfunc(x,y){
+        let btn = document.getElementsByClassName("btn"); 
+        for (let i = 0; i < btn.length; i++) {
+          btn[i].className = btn[i].className.replace("active","");
         }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace("active","");
-        }
-        document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += "active";
-      }
 
+        let div = document.getElementsByClassName("div"); 
+        for (let i = 0; i < div.length; i++) {
+          div[i].style.display = "none";
+        }
+        document.getElementById(y).style.display = "block";
+        x.currentTarget.className += "active";
+      }
       
     </script>
 
