@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>title</title>
+    <style>
+    </style>
+  </head>
+  <body>
+
+    <button class="tablinks" onclick="myfunc(event, 'london')">London</button>
+    <button class="tablinks" onclick="myfunc(event, 'paris')">Paris</button>
+    <button class="tablinks" onclick="myfunc(event, 'tokyo')">Tokyo</button>
+
+    <div id="london" class="tabcontent">
+      <h3>london</h3>
+      <p>this is london</p>
+    </div>
+
+    <div id="paris" class="tabcontent">
+      <h3>paris</h3>
+      <p>this is paris</p>
+    </div>
+
+    <div id="tokyo" class="tabcontent">
+      <h3>tokyo</h3>
+      <p>this is tokyo</p>
+    </div>
+
+    <script>
+      function myfunc(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace("active","");
+        }
+        document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += "active";
+      }
+
+      
+    </script>
+
+
+  </body>
+</html>
