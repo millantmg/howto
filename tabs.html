@@ -3,25 +3,40 @@
   <head>
     <title>title</title>
     <style>
+      @keyframes name {
+        from {opacity: 0;}
+        to {opacity: 1;}
+      }
+      .div {
+        animation: name 1s;
+      }
+      span {
+        float:right;
+        cursor: pointer;
+        font-size: 30px;
+      }
     </style>
   </head>
   <body>
 
-    <button class="btn" onclick="myfunc(event, 'london')">London</button>
+    <button class="btn" onclick="myfunc(event, 'london')" id="defaultOpen">London</button>
     <button class="btn" onclick="myfunc(event, 'paris')">Paris</button>
     <button class="btn" onclick="myfunc(event, 'tokyo')">Tokyo</button>
 
     <div id="london" class="div">
+      <span onclick="this.parentElement.style.display = 'none'">x</span>
       <h3>london</h3>
       <p>this is london</p>
     </div>
 
     <div id="paris" class="div">
+      <span onclick="this.parentElement.style.display = 'none'">x</span>
       <h3>paris</h3>
       <p>this is paris</p>
     </div>
 
     <div id="tokyo" class="div">
+      <span onclick="this.parentElement.style.display = 'none'">x</span>
       <h3>tokyo</h3>
       <p>this is tokyo</p>
     </div>
@@ -40,7 +55,7 @@
         document.getElementById(y).style.display = "block";
         x.currentTarget.className += "active";
       }
-      
+      document.getElementById("defaultOpen").click();
     </script>
 
 
