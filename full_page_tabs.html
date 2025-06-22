@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>title</title>
+    <style>
+      #home {background-color: red;}
+      #news {background-color: green;}
+      #contact {background-color: blue;}
+      #about {background-color: orange;}
+    </style>
+  </head>
+  <body>
+
+    <button class="btn" onclick="myfunc('home', this, 'red')" id="default">Home</button>
+    <button class="btn" onclick="myfunc('news', this, 'green')">News</button>
+    <button class="btn" onclick="myfunc('contact', this, 'blue')">Contact</button>
+    <button class="btn" onclick="myfunc('about', this, 'orange')">About</button>
+
+    <div class="div" id="home">
+      <h2>Home</h2>
+      <p>this is a para</p>
+    </div>
+    <div class="div" id="news">
+      <h2>News</h2>
+      <p>this is a para</p>
+    </div>
+    <div class="div" id="contact">
+      <h2>Contact</h2>
+      <p>this is a para</p>
+    </div>
+    <div class="div" id="about">
+      <h2>About</h2>
+      <p>this is a para</p>
+    </div>
+
+    <script>
+      function myfunc(x,y,z) {
+        let btn = document.getElementsByClassName("btn");
+        for (let i = 0; i < btn.length; i++) {
+          //btn[i].className = btn[i].className.replace("active","");
+          btn[i].style.backgroundColor = "";
+        }
+        let div = document.getElementsByClassName("div");
+        for (let i = 0; i < div.length; i++) {
+          div[i].style.display = "none";
+        }
+        document.getElementById(x).style.display = "block";
+        //x.currentTarget.className += "active";
+        y.style.backgroundColor = z;
+      }
+      document.getElementById("default").click();
+    </script>
+
+  </body>
+</html>
