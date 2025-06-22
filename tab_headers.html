@@ -2,6 +2,12 @@
 <html>
   <head>
     <title>title</title>
+    <style>
+      #london {background-color: red;}
+      #paris {background-color:green;}
+      #tokyo {background-color: blue;}
+      #oslo {background-color: orange;}
+    </style>
     <body>
 
       <div class="div" id="london">
@@ -22,23 +28,25 @@
       </div>
 
 
-      <button class="btn" onclick="myfunc(event, 'london')" id="defaultOpen">London</button>
-      <button class="btn" onclick="myfunc(event, 'paris')">Paris</button>
-      <button class="btn" onclick="myfunc(event, 'tokyo')">Tokyo</button>
-      <button class="btn" onclick="myfunc(event, 'oslo')">Oslo</button>
+      <button class="btn" onclick="myfunc('london',this, 'red')" id="defaultOpen">London</button>
+      <button class="btn" onclick="myfunc('paris', this, 'green')">Paris</button>
+      <button class="btn" onclick="myfunc('tokyo', this, 'blue')">Tokyo</button>
+      <button class="btn" onclick="myfunc('oslo', this, 'orange')">Oslo</button>
 
       <script>
-        function myfunc(x,y){
+        function myfunc(x,y,z){
           const div = document.getElementsByClassName("div");
           for (let i = 0; i < div.length; i++) {
             div[i].style.display = "none";
           }
           const btn = document.getElementsByClassName("btn");
           for (let i = 0; i < btn.length; i++) {
-            btn[i].className = btn[i].className.replace(" active", "");
+           // btn[i].className = btn[i].className.replace(" active", "");
+           btn[i].style.backgroundColor = "";
           }
-          document.getElementById(y).style.display = "block";
-          x.currentTarget.className += " active";
+          document.getElementById(x).style.display = "block";
+          //x.currentTarget.className += " active";
+          y.style.backgroundColor = z;
         }
         document.getElementById("defaultOpen").click();
       </script>
