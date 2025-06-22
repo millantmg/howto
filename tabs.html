@@ -3,6 +3,10 @@
   <head>
     <title>title</title>
     <style>
+      * {
+        box-sizing: border-box;
+        font-family: verdana;
+      }
       @keyframes name {
         from {opacity: 0;}
         to {opacity: 1;}
@@ -15,30 +19,57 @@
         cursor: pointer;
         font-size: 30px;
       }
+      .nav, .content {
+        float:left;
+        border: 1px solid gray;
+        height: 300px;
+        padding: 0 20px;
+      }
+      .nav {
+        width: 20%;
+      }
+      .content {
+        width: 80%;
+      }
+      button {
+        width: 100%;
+        font-size: 30px;
+        border: none;
+        cursor: pointer;
+        padding: 20px;
+        background-color: inherit;
+      }
+      button:hover {
+        background-color: red;
+      }
     </style>
   </head>
   <body>
 
-    <button class="btn" onclick="myfunc(event, 'london')" id="defaultOpen">London</button>
-    <button class="btn" onclick="myfunc(event, 'paris')">Paris</button>
-    <button class="btn" onclick="myfunc(event, 'tokyo')">Tokyo</button>
-
-    <div id="london" class="div">
-      <span onclick="this.parentElement.style.display = 'none'">x</span>
-      <h3>london</h3>
-      <p>this is london</p>
+    <div class="nav">
+      <button class="btn" onclick="myfunc(event, 'london')" id="defaultOpen">London</button>
+      <button class="btn" onclick="myfunc(event, 'paris')">Paris</button>
+      <button class="btn" onclick="myfunc(event, 'tokyo')">Tokyo</button>
     </div>
 
-    <div id="paris" class="div">
-      <span onclick="this.parentElement.style.display = 'none'">x</span>
-      <h3>paris</h3>
-      <p>this is paris</p>
-    </div>
+    <div class="content">
+      <div id="london" class="div">
+        <span onclick="this.parentElement.style.display = 'none'">x</span>
+        <h3>london</h3>
+        <p>this is london</p>
+      </div>
 
-    <div id="tokyo" class="div">
-      <span onclick="this.parentElement.style.display = 'none'">x</span>
-      <h3>tokyo</h3>
-      <p>this is tokyo</p>
+      <div id="paris" class="div">
+        <span onclick="this.parentElement.style.display = 'none'">x</span>
+        <h3>paris</h3>
+        <p>this is paris</p>
+      </div>
+
+      <div id="tokyo" class="div">
+        <span onclick="this.parentElement.style.display = 'none'">x</span>
+        <h3>tokyo</h3>
+        <p>this is tokyo</p>
+      </div>
     </div>
 
     <script>
