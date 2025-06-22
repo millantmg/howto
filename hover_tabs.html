@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>title</title>
+    <style>
+      * {box-sizing: border-box;}
+      .nav, .content {
+        float:left;
+        border: 1px solid gray;
+        height: 300px;
+      }
+      .nav {width: 20%;}
+      .content {width: 80%;}
+
+      button {
+        width: 100%; 
+        text-align: left; 
+        border: none;
+        background-color: inherit;
+        cursor: pointer;
+        padding: 20px;
+      }
+      button:hover {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>no click only hovering</p>
+
+    <div class="nav">
+      <button class="btn" onmouseover="myfunc(event, 'london')">London</button>
+      <button class="btn" onmouseover="myfunc(event, 'paris')">Paris</button>    
+      <button class="btn" onmouseover="myfunc(event, 'tokyo')">Tokyo</button>
+    </div>
+
+    <div class="content">
+      <div class="div" id="london">
+        <h2>London</h2>
+        <p>this is a para</p>
+      </div>
+      <div class="div" id="paris">
+        <h2>Paris</h2>
+        <p>this is a para</p>
+      </div>
+      <div class="div" id="tokyo">
+        <h2>Tokyo</h2>
+        <p>this is a para</p>
+      </div>
+    </div>
+
+    <script>
+      function myfunc(x,y) {
+        let btn = document.getElementsByClassName("btn");
+        for (let i = 0; i < btn.length; i++) {
+          btn[i].className = btn[i].className.replace("active","");
+        }
+        let div = document.getElementsByClassName("div");
+        for (let i = 0; i < div.length; i++) {
+          div[i].style.display = "none";
+        }
+        document.getElementById(y).style.display = "block";
+        x.currentTarget.className += "active";
+
+      }
+    </script>
+
+
+
+  </body>
+</html>
