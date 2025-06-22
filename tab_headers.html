@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>title</title>
+    <body>
+
+      <div class="div" id="london">
+        <h2>London</h2>
+        <p>this is a header</p>
+      </div>
+      <div class="div" id="paris">
+        <h2>Paris</h2>
+        <p>this is a paris</p>
+      </div>
+      <div class="div" id="tokyo">
+        <h2>Tokyo</h2>
+        <p>this is a tokyo</p>
+      </div>
+      <div class="div" id="oslo">
+        <h2>Oslo</h2>
+        <p>this is a oslo</p>
+      </div>
+
+
+      <button class="btn" onclick="myfunc(event, 'london')" id="defaultOpen">London</button>
+      <button class="btn" onclick="myfunc(event, 'paris')">Paris</button>
+      <button class="btn" onclick="myfunc(event, 'tokyo')">Tokyo</button>
+      <button class="btn" onclick="myfunc(event, 'oslo')">Oslo</button>
+
+      <script>
+        function myfunc(x,y){
+          const div = document.getElementsByClassName("div");
+          for (let i = 0; i < div.length; i++) {
+            div[i].style.display = "none";
+          }
+          const btn = document.getElementsByClassName("btn");
+          for (let i = 0; i < btn.length; i++) {
+            btn[i].className = btn[i].className.replace(" active", "");
+          }
+          document.getElementById(y).style.display = "block";
+          x.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
+      </script>
+
+    </body>
+  </head>
+</html>
