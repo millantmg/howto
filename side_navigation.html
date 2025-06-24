@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="nav">
+      <a href="javascript:void(0)" onclick="myClose()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <span onclick="myOpen()">&#9776; open</span>
+
+    <script>
+      function myOpen(){
+        document.getElementById("nav").style.width = "250px";
+      }
+      function myClose() {
+        document.getElementById("nav").style.width = "0";
+      }
+    </script>
+  </body>
+</html>
