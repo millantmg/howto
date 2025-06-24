@@ -54,10 +54,15 @@
       function myOpen(){
         document.getElementById("nav").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px"
+        document.body.style.backgroundColor = "red";
+        document.getElementById("nav").style.width = "100%";
+        document.getElementById("nav").style.display = "block";
       }
       function myClose() {
         document.getElementById("nav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0"
+        document.body.style.backgroundColor = "yellow";
+        document.getElementById("nav").style.display = "none";
       }
     </script>
   </body>
