@@ -1,24 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      * {
+        font-family: verdana;
+      }
+      nav {
+        background-color: black;
+        height: 100%;
+        position: fixed;
+        overflow: hidden;
+        width: 0;
+        top: 0;
+        left: 0;
+        padding-top: 50px;
+      }
+      nav a {
+        display: block;
+        padding: 10px 30px;
+        color:white;
+        text-decoration: none;
+      }
+      nav a:hover {
+        color:pink;
+      }
+      main {
+        padding: 20px;
+      }
+      .x {
+        font-size: 20px;
+        top: 0;
+        right: 10px;
+        position: absolute;
+      }
+    </style>
   </head>
   <body>
-    <div id="nav">
-      <a href="javascript:void(0)" onclick="myClose()">&times;</a>
+    <nav id="nav">
+      <a href="javascript:void(0)" class="x" onclick="myClose()">&times;</a>
       <a href="#">About</a>
       <a href="#">Services</a>
       <a href="#">Clients</a>
       <a href="#">Contact</a>
-    </div>
+    </nav>
 
     <span onclick="myOpen()">&#9776; open</span>
+
+    <main id="main">
+      <p>this is a para</p>
+    </main>
 
     <script>
       function myOpen(){
         document.getElementById("nav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px"
       }
       function myClose() {
         document.getElementById("nav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0"
       }
     </script>
   </body>
