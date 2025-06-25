@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        .res a{
+          display: block;
+        }
+    </style>
+  </head>
+  <body>
+    <p>Resize and see</p>
+    <nav class="cls" id="nav">
+      <a href="#">Home</a>
+      <a href="#">News</a>
+      <a href="#">Contact</a>
+      <a href="#">About</a>
+    </nav>
+
+    <a href="javascript:void(0)" onclick="myfunc()">&#9776;</a>
+
+    <script>
+      function myfunc(){
+        let x = document.getElementById("nav");
+        if (x.className === "cls") {
+          x.className += " res";
+        } else {
+          x.className = "cls";
+        }
+      }
+    </script>
+  </body>
+</html>
