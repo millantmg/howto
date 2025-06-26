@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .menu {display: none;}
+      .show {display: block;}
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <button onclick="myfunc()">Dropdown</button>
+      <div id="menuid" class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+    <script>
+      function myfunc(){
+      document.getElementById("menuid").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
